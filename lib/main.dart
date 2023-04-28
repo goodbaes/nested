@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:nested/app/modules/home/bindings/home_binding.dart';
-import 'package:nested/app/modules/home/views/home_view.dart';
+
+import 'app/routes/app_pages.dart';
 
 void main() {
-  HomeBinding().dependencies();
   runApp(
-    const GetMaterialApp(
+    GetMaterialApp(
       title: "Application",
-      home: HomeView(),
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
     ),
   );
 }

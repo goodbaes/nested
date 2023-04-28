@@ -11,6 +11,7 @@ class ShopView extends GetView<ShopController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Text('ShopView'),
         centerTitle: true,
       ),
