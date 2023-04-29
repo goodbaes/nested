@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:nested/app/routes/base_route.dart';
 import 'package:nested/app/routes/destination.dart';
 
 import '../controllers/shop_controller.dart';
@@ -18,7 +19,7 @@ class ShopView extends GetView<ShopController> {
       body: Center(
         child: ElevatedButton(
           child: const Text('to RemindersView'),
-          onPressed: () => Get.toNamed(Destination.detail.route, id: 1),
+          onPressed: () => BaseRoute.toNamed(Destination.detail.route),
         ),
       ),
     );
