@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:nested/app/routes/destination_settings.dart';
 
+import '../../../routes/app_pages.dart';
 import '../../../routes/base_route.dart';
 import '../controllers/settings_controller.dart';
 
@@ -19,7 +19,7 @@ class SettingsView extends GetView<SettingsController> {
       body: Center(
         child: ElevatedButton(
           child: const Text('to RemindersView'),
-          onPressed: () => BaseRoute.to.toNamed(DestinationSettings.reminders.route, arguments: 'from sett'),
+          onPressed: () => BaseRoute.to.toNamed(Routes.REMINDERS, arguments: 'from sett'),
         ),
       ),
     );

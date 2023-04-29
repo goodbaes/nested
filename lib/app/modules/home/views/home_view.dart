@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:nested/app/routes/destination_settings.dart';
+import 'package:nested/app/routes/app_pages.dart';
 
-import '../../../routes/destination.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -17,12 +16,8 @@ class HomeView extends GetView<HomeController> {
             children: [
               Row(
                 children: [
-                  ElevatedButton(
-                      child: const Icon(Icons.home),
-                      onPressed: () => controller.tabIndex.value = 0),
-                  ElevatedButton(
-                      child: const Icon(Icons.home),
-                      onPressed: () => controller.tabIndex.value = 1),
+                  ElevatedButton(child: const Icon(Icons.home), onPressed: () => controller.tabIndex.value = 0),
+                  ElevatedButton(child: const Icon(Icons.home), onPressed: () => controller.tabIndex.value = 1),
                 ],
               ),
               Expanded(
@@ -30,16 +25,13 @@ class HomeView extends GetView<HomeController> {
                   index: controller.tabIndex.value,
                   children: [
                     Navigator(
-                      key: Get.nestedKey(1),
-                      initialRoute: Destination.shop.route,
-                      onGenerateRoute: (settings) =>
-                          Destination.getPage(settings),
-                    ),
+                        key: Get.nestedKey(1),
+                        initialRoute: Routes.SHOP,
+                        onGenerateRoute: (settings) => AppPages.getPage(settings)),
                     Navigator(
                       key: Get.nestedKey(2),
-                      initialRoute: DestinationSettings.settings.route,
-                      onGenerateRoute: (settings) =>
-                          DestinationSettings.getPage(settings),
+                      initialRoute: Routes.SETTINGS,
+                      onGenerateRoute: (settings) => AppPages.getPage(settings),
                     ),
                   ],
                 ),
