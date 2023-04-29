@@ -17,9 +17,17 @@ class ShopView extends GetView<ShopController> {
         centerTitle: true,
       ),
       body: Center(
-        child: ElevatedButton(
-          child: const Text('to To detail'),
-          onPressed: () => BaseRoute.to.toNamed(Routes.DETAIL, arguments: 'from shop', isNested: true),
+        child: Column(
+          children: [
+            ElevatedButton(
+              child: const Text('to To detail'),
+              onPressed: () => BaseRoute.to.toNamed(Routes.DETAIL, arguments: 'from shop', isNested: true),
+            ),
+            ElevatedButton(
+              child: const Text('to To onboarding'),
+              onPressed: () => BaseRoute.to.toNamed(Routes.ONBOARDING, arguments: 'from shop'),
+            ),
+          ],
         ),
       ),
     );
