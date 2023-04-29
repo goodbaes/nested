@@ -19,7 +19,7 @@ class SettingsView extends GetView<SettingsController> {
       body: Center(
         child: ElevatedButton(
           child: const Text('to RemindersView'),
-          onPressed: () => BaseRoute.to.toNamed(Routes.REMINDERS, arguments: 'from sett'),
+          onPressed: () => BaseRoute.to.toNamed(Routes.REMINDERS, arguments: 'from sett', isNested: true),
         ),
       ),
     );

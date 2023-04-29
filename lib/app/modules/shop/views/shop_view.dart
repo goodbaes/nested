@@ -19,7 +19,7 @@ class ShopView extends GetView<ShopController> {
       body: Center(
         child: ElevatedButton(
           child: const Text('to To detail'),
-          onPressed: () => BaseRoute.to.toNamed(Routes.DETAIL, arguments: 'from shop'),
+          onPressed: () => BaseRoute.to.toNamed(Routes.DETAIL, arguments: 'from shop', isNested: true),
         ),
       ),
     );

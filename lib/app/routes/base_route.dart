@@ -6,18 +6,18 @@ class BaseRoute extends GetxController {
 
   static BaseRoute init() => Get.put(BaseRoute());
 
-  int? get _currentRoute => Get.isRegistered<HomeController>() ? HomeController.to.tabIndex.value + 1 : null;
+  int? get _currentKey => Get.isRegistered<HomeController>() ? HomeController.to.tabIndex.value + 1 : null;
 
   toNamed(String route, {arguments, bool isNested = false}) {
     if (isNested) {
-      _arguments[_currentRoute!] = arguments;
-      Get.toNamed(route, id: _currentRoute);
+      _arguments[_currentKey!] = arguments;
+      Get.toNamed(route, id: _currentKey);
     } else {
       Get.toNamed(route, arguments: arguments);
     }
   }
 
-  dynamic get arguments => _currentRoute == null ? _arguments[_currentRoute] : Get.arguments;
+  dynamic get arguments => _currentKey != null ? _arguments[_currentKey] : Get.arguments;
 
   final Map<int, dynamic> _arguments = {};
 }
