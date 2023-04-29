@@ -30,8 +30,8 @@ enum DestinationSettings {
   }
 
   static GetPageRoute getPage(RouteSettings settings) {
-    var destination = DestinationSettings.values
-        .firstWhereOrNull((e) => e.route == settings.name);
+    var destination = DestinationSettings.values.firstWhereOrNull((e) => e.route == settings.name);
+
     return GetPageRoute(page: () => destination?.widget ?? Container());
   }
 }

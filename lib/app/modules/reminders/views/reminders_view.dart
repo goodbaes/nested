@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:nested/app/routes/base_route.dart';
 
 import '../controllers/reminders_controller.dart';
 
@@ -13,10 +14,10 @@ class RemindersView extends GetView<RemindersController> {
         title: const Text('RemindersView'),
         centerTitle: true,
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'RemindersView is working',
-          style: TextStyle(fontSize: 20),
+          BaseRoute.to.arguments,
+          style: const TextStyle(fontSize: 20),
         ),
       ),
     );

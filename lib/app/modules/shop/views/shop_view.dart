@@ -19,7 +19,7 @@ class ShopView extends GetView<ShopController> {
       body: Center(
         child: ElevatedButton(
           child: const Text('to RemindersView'),
-          onPressed: () => BaseRoute.toNamed(Destination.detail.route),
+          onPressed: () => BaseRoute.to.toNamed(Destination.detail.route, arguments: 'from shop'),
         ),
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../../routes/base_route.dart';
 import '../controllers/detail_controller.dart';
 
 class DetailView extends GetView<DetailController> {
@@ -13,10 +14,10 @@ class DetailView extends GetView<DetailController> {
         title: const Text('DetailView'),
         centerTitle: true,
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'DetailView is working',
-          style: TextStyle(fontSize: 20),
+          BaseRoute.to.arguments,
+          style: const TextStyle(fontSize: 20),
         ),
       ),
     );
