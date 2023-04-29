@@ -18,7 +18,7 @@ class AppPages {
   AppPages._();
 
   static const INITIAL = Routes.HOME;
-  
+
   static GetPageRoute getPage(RouteSettings settings) {
     GetPage? getxPage = routes.firstWhereOrNull((e) {
       return e.name == settings.name;
